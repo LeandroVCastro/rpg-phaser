@@ -3,8 +3,8 @@
  <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32" tilecount="48" columns="8">
   <image source="grass.png" width="256" height="192"/>
  </tileset>
- <tileset firstgid="49" name="watter" tilewidth="32" tileheight="32" tilecount="384" columns="64">
-  <image source="watter.png" width="2048" height="192"/>
+ <tileset firstgid="49" name="water" tilewidth="32" tileheight="32" tilecount="384" columns="64">
+  <image source="water.png" width="2048" height="192"/>
   <tile id="0">
    <properties>
     <property name="collider" type="bool" value="true"/>
@@ -1950,7 +1950,7 @@
 15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
 </data>
  </layer>
- <layer id="2" name="watter" width="25" height="20">
+ <layer id="2" name="water" width="25" height="20">
   <data encoding="csv">
 245,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,183,246,
 120,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,118,

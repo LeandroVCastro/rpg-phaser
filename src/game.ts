@@ -7,17 +7,17 @@ export default class Demo extends Phaser.Scene {
 
   preload() {
     this.load.image("tiles", "./assets/map/grass.png");
-    this.load.image("border", "./assets/map/watter.png");
+    this.load.image("border", "./assets/map/water.png");
     this.load.tilemapTiledJSON("map", "./assets/map/map.json");
   }
 
   create() {
     const map = this.make.tilemap({ key: "map" });
     const tilesetGrass = map.addTilesetImage("grass", "tiles");
-    const tilesetWater = map.addTilesetImage("watter", "border");
+    const tilesetWater = map.addTilesetImage("water", "border");
 
     const ground = map.createLayer("grass", tilesetGrass, 0, 0);
-    const watter = map.createLayer("watter", tilesetWater, 0, 0);
+    const water = map.createLayer("water", tilesetWater, 0, 0);
   }
 }
 
