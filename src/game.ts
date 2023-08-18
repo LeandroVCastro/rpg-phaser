@@ -1,8 +1,11 @@
 import * as Phaser from "phaser";
 import { createPlayer, loadSprites } from "./player";
+import { createControls, configControls } from "./controls";
 
 export default class Demo extends Phaser.Scene {
   player;
+  controls;
+
   constructor() {
     super("demo");
   }
@@ -25,6 +28,12 @@ export default class Demo extends Phaser.Scene {
     this.player = createPlayer(this);
 
     this.player.anims.play("player_idle", true);
+
+    this.controls = createControls(this);
+  }
+
+  update() {
+    configControls(this.player, this.controls, this);
   }
 }
 
