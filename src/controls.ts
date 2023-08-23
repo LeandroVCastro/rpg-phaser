@@ -1,3 +1,5 @@
+import { Player } from "./player";
+
 export const createControls = (
   scene: Phaser.Scene
 ): Phaser.Types.Input.Keyboard.CursorKeys => {
@@ -5,7 +7,7 @@ export const createControls = (
 };
 
 export const configControls = (
-  player,
+  player: Player,
   controls: Phaser.Types.Input.Keyboard.CursorKeys,
   scene: Phaser.Scene
 ): void => {
@@ -33,11 +35,15 @@ export const configControls = (
   }
 
   if (controls.space.isDown) {
-    attack(player);
+    if (!player.isAttacking) {
+      attack(player);
+    }
     return;
   }
 
-  player.anims.play("player_idle", true);
+  if (!player.isAttacking) {
+    player.anims.play("player_idle", true);
+  }
 };
 
 const defaultVelocity = 200;
@@ -63,6 +69,7 @@ const moveDown = (player): void => {
   player.setVelocityY(defaultVelocity);
 };
 
-const attack = (player): void => {
+const attack = (player: Player): void => {
+  player.isAttacking = true;
   player.anims.play("player_attack", true);
 };
